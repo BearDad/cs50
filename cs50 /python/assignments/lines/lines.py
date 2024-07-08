@@ -21,12 +21,12 @@ def cli_argument():
                 file_name = sys.argv[1]
                 return file_name
                 break
-        except IndexError:
+        except IndexError, FileNotFoundError:
             sys.exit()
 
 
 def file(file_name):
-    while True:
+
         try:
             with open(file_name, "r") as file:
                 lines = file.readlines()
