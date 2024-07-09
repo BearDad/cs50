@@ -28,15 +28,14 @@ def read_parent_file(parent_file):
         parent = csv.DictReader(file)
         for row in parent:
             last, first = row["name"].split(",")
-            temp_parent.append({"first": first, "last": last, "house": row["house"]})
-        print(temp_parent)
+            temp_parent.append({"first": first.lstrip(), "last": last, "house": row["house"]})
         return temp_parent
 
 
 def write_child_file(parent_file, child_file):
     with open(child_file, "w") as file:
         fieldnames = ["first", "last", "house"]
-        child_file = csv.DictWriter(file, fieldnames=fieldnames)
+        child_file = csv.DictWriter(file, fieldnames=fieldnames, lineterminator="\n")
         child_file.writeheader()
         child_file.writerows(parent_file)
 
