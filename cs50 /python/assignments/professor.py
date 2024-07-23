@@ -12,7 +12,7 @@ def get_level():
             level = int(input("level: "))
             if level <= 3 and level >= 1:
                 return level
-                pass
+
             else:
                 print("invalid input")
         except ValueError:
@@ -21,7 +21,7 @@ def get_level():
 
 def generate_integer(level):
     score = 0
-    for i in range(9):
+    for _ in range(9):
         trials = 0
         if level == 1:
             x = random.randint(0, 9)

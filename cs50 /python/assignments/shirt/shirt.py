@@ -28,9 +28,7 @@ def get_input():
 def image_mod(cli_input, cli_output):
     print(cli_input, cli_output)
     try:
-        shirt = Image.open(
-            "/home/beardad23/vscode/cs50 /python/assignments/shirt/shirt.png"
-        )
+        shirt = Image.open("/home/beardad23/vscode/cs50 /python/assignments/shirt/shirt.png")
         with Image.open(cli_input) as file:
             cli_input_cropped = ImageOps.fit(file, shirt.size)
             cli_input_cropped.paste(shirt, mask=shirt)
