@@ -26,10 +26,15 @@ def read_parent_file(parent_file):
     temp_parent = []
     with open(parent_file, "r") as file:
         parent = csv.DictReader(file)
-        for row in parent:
-            last, first = row["name"].split(",")
-            temp_parent.append({"first": first.lstrip(), "last": last, "house": row["house"]})
-        return temp_parent
+        try:
+            for row in parent:
+                last, first = row["name"].split(",")
+                temp_parent.append(
+                    {"first": first.lstrip(), "last": last, "house": row["house"]}
+                )
+            return temp_parent
+        except KeyError:
+            sys.exit("There is no name key")
 
 
 def write_child_file(parent_file, child_file):
@@ -42,3 +47,4 @@ def write_child_file(parent_file, child_file):
 
 if __name__ == "__main__":
     main()
+
