@@ -1,6 +1,7 @@
-from pyfiglet import Figlet
-import sys
 import random
+import sys
+
+from pyfiglet import Figlet
 
 
 def main():
