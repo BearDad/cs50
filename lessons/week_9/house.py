@@ -13,5 +13,6 @@ for _ in students:
         houses.append(_["house"])
 for house in sorted(houses):
     print(house)
+    print("something")
 
 print(houses)
