@@ -1,6 +1,7 @@
 import sys
 
-#this good
+
+# this good
 def main():
     file_name = cli_argument()
     lines = file(file_name)
@@ -21,19 +22,18 @@ def cli_argument():
                 file_name = sys.argv[1]
                 return file_name
                 break
-        except IndexError, FileNotFoundError:
+        except (IndexError, FileNotFoundError):
             sys.exit()
 
 
 def file(file_name):
-
-        try:
-            with open(file_name, "r") as file:
-                lines = file.readlines()
-                return lines
-        except (FileExistsError, FileNotFoundError):
-            print("file not found or doesn't exitst")
-            sys.exit()
+    try:
+        with open(file_name, "r") as file:
+            lines = file.readlines()
+            return lines
+    except (FileExistsError, FileNotFoundError):
+        print("file not found or doesn't exitst")
+        sys.exit()
 
 
 def Line_count(lines):
