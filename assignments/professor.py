@@ -41,7 +41,7 @@ def generate_integer(level):
                     trials += 1
                     continue
                 else:
-                    print(f"{x} + {y} = {x+y}")
+                    print(f"{x} + {y} = {x + y}")
                     score += 1
                     break
             except ValueError:
@@ -51,10 +51,9 @@ def generate_integer(level):
                     continue
 
                 else:
-                    print(f"{x} + {y} = {x+y}")
+                    print(f"{x} + {y} = {x + y}")
                     break
     print(f"Score:{score}")
-
 
 if __name__ == "__main__":
     main()
